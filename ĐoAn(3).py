@@ -52,10 +52,7 @@ while True:
             local_id = names[local_id]
             confidence = "          {0}%".format(round(confidence))
 
-            # Chỉ thực thi một lần nếu chưa được thực thi
-            if not executed_once:
-                exec(content)
-                executed_once = True
+
 
         else:
             local_id = "Unknown"
@@ -76,7 +73,7 @@ while True:
 # Di chuyển dòng này ra khỏi vòng lặp
 cam.release()
 cv2.destroyAllWindows()
-print("ID đây", id)
+print("ID :", id)
 
 # Create Excel file
 current_time = datetime.now().strftime("%Y-%m-%d")

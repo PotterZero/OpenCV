@@ -16,6 +16,9 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 def getImagesAndLabels(path):
     # nên tạo 1 folder
+#    folder_name = name
+#    subfolder_path = create_subfolder(parent_folder, folder_name)
+    # Quet folder
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
     faces = []
     ids = []
@@ -29,10 +32,10 @@ def getImagesAndLabels(path):
     for imagePath in imagePaths:
         # Tách tên tệp và phần mở rộng
         filename, extension = os.path.splitext(os.path.basename(imagePath))
-        print( filename)
+
         # Lấy nhãn của khuôn mặt
-        id = int(filename.split(".")[1])
-        print("Account : ",id)
+        id = int(filename.split(".")[-1])
+
         # Chuyển đổi ảnh sang dạng grayscale và uint8
         PIL_img = Image.open(imagePath).convert('L')  # convert it to grayscale
         img_numpy = np.array(PIL_img, "uint8")

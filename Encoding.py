@@ -3,7 +3,7 @@ import time
 import os
 
 # Thay đổi đường dẫn tới file hex của bạn
-arduino_code_path = "C:\\Users\\Admin\\Documents\\Arduino\\Servo_simple\\Servo_simple.ino.arduino_avr.uno.hex"
+arduino_code_path = "C:\\Users\\Admin\\Documents\\Arduino\\DC_step\\DC_step.ino"
 
 # Kết nối với Arduino thông qua cổng COM, hãy thay đổi cổng COM tương ứng của bạn
 ser = serial.Serial('COM3', 9600, timeout=1)
@@ -21,5 +21,4 @@ if os.path.exists(arduino_code_path):
 else:
     print(f"File not found: {arduino_code_path}")
 
-# Đóng kết nối
 ser.close()
