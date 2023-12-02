@@ -51,7 +51,9 @@ while True:
         if confidence < 150:
             local_id = names[local_id]
             confidence = "          {0}%".format(round(confidence))
-
+            if not executed_once:
+                    exec(content)
+                    executed_once = True
 
 
         else:
